@@ -80,7 +80,7 @@ M.cell = function(index)
     local bufnr = buflist[winnr]
     local hl = (isSelected and '%#TabLineSel#' or '%#TabLine#')
 
-    return hl .. '%' .. index .. 'T' .. ' ' ..
+    return hl .. '%' .. index .. 'T' .. ' [' .. index .. '] ' ..
         M.devicon(bufnr, isSelected) ..
         M.title(bufnr) .. ' ' ..
         M.modified(bufnr) .. '%T' ..

@@ -28,7 +28,7 @@ M.title = function(bufnr)
 end
 
 M.modified = function(bufnr)
-    return vim.fn.getbufvar(bufnr, '&modified') == 1 and '● ' or ''
+    return vim.fn.getbufvar(bufnr, '&modified') == 1 and ' ●' or ''
 end
 
 M.windowCount = function(index)
@@ -81,7 +81,7 @@ M.cell = function(index)
     local bufnr = buflist[winnr]
     local hl = (isSelected and '%#TabLineSel#' or '%#TabLine#')
 
-    return hl .. '%' .. index .. 'T' .. '[' .. index .. ']' ..
+    return hl .. '%' .. index .. 'T' .. ' [' .. index .. ']' ..
         M.devicon(bufnr, isSelected) ..
         M.title(bufnr) ..
         M.modified(bufnr) .. '%T' ..

@@ -28,7 +28,7 @@ M.title = function(bufnr)
 end
 
 M.modified = function(bufnr)
-    return vim.fn.getbufvar(bufnr, '&modified') == 1 and '[+] ' or ''
+    return vim.fn.getbufvar(bufnr, '&modified') == 1 and '● ' or ''
 end
 
 M.windowCount = function(index)

@@ -70,7 +70,8 @@ M.devicon = function(bufnr, isSelected)
 end
 
 M.separator = function(index)
-    return (index < vim.fn.tabpagenr('$') and '%#TabLine#|' or '')
+    -- return (index < vim.fn.tabpagenr('$') and '%#TabLine#|' or '')
+    return ('')
 end
 
 M.cell = function(index)
@@ -80,7 +81,7 @@ M.cell = function(index)
     local bufnr = buflist[winnr]
     local hl = (isSelected and '%#TabLineSel#' or '%#TabLine#')
 
-    return hl .. '%' .. index .. 'T' .. ' [' .. index .. '] ' ..
+    return hl .. '%' .. index .. 'T' .. ' [' .. index .. ']' ..
         M.devicon(bufnr, isSelected) ..
         M.title(bufnr) .. ' ' ..
         M.modified(bufnr) .. '%T' ..
